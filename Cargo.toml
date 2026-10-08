@@ -1,0 +1,17 @@
+[package]
+name="spc-pos"
+version = "0.1.0"
+edition = "2024"
+publish = true
+
+[dependencies]
+
+
+
+[profile.release]
+# Tối ưu hóa file binary cho Production
+opt-level = 3     # Tối ưu hóa tốc độ tối đa
+lto = true        # Link Time Optimization (giảm kích thước file build)
+codegen-units = 1 # Giúp compiler tối ưu hóa tốt hơn
+panic = "abort"   # Giảm kích thước file bằng cách bỏ qua stack unwinding
+strip = true      # Loại bỏ các ký tự debug để file cực nhẹ
