@@ -5,7 +5,18 @@ edition = "2024"
 publish = true
 
 [dependencies]
-
+tokio = { version = "1.53.2", features = ["rt-multi-thread", "macros", "time", "signal"] }
+reqwest = { version = "0.13.5", default-features = false, features = ["json", "rustls"] }
+tower = { version = "0.5.3", features = ["util", "timeout", "limit", "retry", "buffer"] }
+futures-util = "0.3.34"
+sqlx = { version = "0.9.0", features = ["runtime-tokio", "sqlite", "migrate", "chrono"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+chrono = { version = "0.4.45", features = ["serde"] }
+anyhow = "1.0.104"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+scraper = "0.27.0"
 
 
 [profile.release]
